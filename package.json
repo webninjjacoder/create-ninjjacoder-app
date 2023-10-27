@@ -1,6 +1,6 @@
 {
   "name": "create-ninjjacoder-app",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Create starter apps for ninjjacoder",
   "scripts": {
     "gen:new": "turbo gen run",
