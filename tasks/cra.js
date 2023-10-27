@@ -13,7 +13,7 @@ const path = require("path");
 const cp = require("child_process");
 
 const readline = require("readline");
-const inquirer = require("inquirer");
+// const inquirer = require("inquirer");
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -69,16 +69,16 @@ const createApp = async () => {
   let templateName = packages.includes(paramsTemplate) ? paramsTemplate : "";
 
   if (templateName == "") {
-    const selectedTemplate = await inquirer.prompt([
-      {
-        type: "list",
-        name: "template",
-        message: "Which template should we use (e.g. react-cra)?",
-        choices: packages,
-      },
-    ]);
+    // const selectedTemplate = await inquirer.prompt([
+    //   {
+    //     type: "list",
+    //     name: "template",
+    //     message: "Which template should we use (e.g. react-cra)?",
+    //     choices: packages,
+    //   },
+    // ]);
 
-    templateName = selectedTemplate.template;
+    templateName = "react-cra";
   }
 
   const templatePath = path.join(__dirname, "..", "react-apps", templateName);
