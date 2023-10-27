@@ -29,6 +29,16 @@ function takeInput(query) {
   );
 }
 
+const onPromptState = (state) => {
+  if (state.aborted) {
+    // If we don't re-enable the terminal cursor before exiting
+    // the program, the cursor will remain hidden
+    process.stdout.write("\x1B[?25h");
+    process.stdout.write("\n");
+    process.exit(1);
+  }
+};
+
 const createApp = async () => {
   const params = process.argv.slice(2);
 
@@ -69,6 +79,24 @@ const createApp = async () => {
   let templateName = packages.includes(paramsTemplate) ? paramsTemplate : "";
 
   if (templateName == "") {
+    const res = await prompts({
+      onState: onPromptState,
+      type: "text",
+      name: "path",
+      message: "What is your project named?",
+      initial: "my-app",
+      validate: (name) => {
+        const validation = validateNpmName(path.basename(path.resolve(name)));
+        if (validation.valid) {
+          return true;
+        }
+        return "Invalid project name: " + validation.problems[0];
+      },
+    });
+
+    if (typeof res.path === "string") {
+      projectPath = res.path.trim();
+    }
     // const selectedTemplate = await inquirer.prompt([
     //   {
     //     type: "list",
