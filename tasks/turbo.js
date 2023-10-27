@@ -2,8 +2,7 @@
 
 const { exec } = require("child_process");
 
-// Define the command you want to run
-const commandToRun = "turbo-gen-run"; // Replace with the actual command and options
+const commandToRun = "turbo gen run";
 
 // Execute the command
 exec(commandToRun, (error, stdout, stderr) => {

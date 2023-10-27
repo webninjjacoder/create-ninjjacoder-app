@@ -1,24 +1,24 @@
 // @ts-ignore
-import { PlopTypes } from '@turbo/gen';
-import searchList from 'inquirer-search-list';
+import { PlopTypes } from "@turbo/gen";
+import searchList from "inquirer-search-list";
 // @ts-ignore
-import path from 'path';
+import path from "path";
 // @ts-ignore
-import fs from 'fs';
-
+import fs from "fs";
+const currentDirectory = process.cwd();
 export default function generator(plop: PlopTypes.NodePlopAPI): void {
-  plop.setPrompt('search-list', searchList);
+  plop.setPrompt("search-list", searchList);
 
-  plop.setGenerator('generate app', {
+  plop.setGenerator("generate app", {
     // description: 'Copy a directory to a specified location',
     prompts: [
       {
-        type: 'search-list',
-        message: 'Select your template:',
-        name: 'sourceDirectory',
+        type: "search-list",
+        message: "Select your template:",
+        name: "sourceDirectory",
         choices: () => {
           // Read subdirectories within the 'react-apps' directory and use them as choices
-          const reactAppDir = path.join(__dirname, '..', '..', 'react-apps');
+          const reactAppDir = path.join(__dirname, "..", "..", "react-apps");
           return fs.readdirSync(reactAppDir).filter((file) => {
             return fs.statSync(path.join(reactAppDir, file)).isDirectory();
           });
@@ -26,34 +26,28 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       },
 
       {
-        type: 'input',
-        name: 'destinationDirectory',
-        message: 'Enter the name of your app:',
+        type: "input",
+        name: "destinationDirectory",
+        message: "Enter the name of your app:",
       },
     ],
     actions: [
       {
-        type: 'addMany',
-        destination: path.join(
-          __dirname,
-          '..',
-          '..',
-          'wip',
-          '{{sourceDirectory}}-{{destinationDirectory}}'
-        ),
+        type: "addMany",
+        destination: path.join(currentDirectory, "{{destinationDirectory}}"),
         base: path.join(
           __dirname,
-          '..',
-          '..',
-          'react-apps',
-          '{{sourceDirectory}}'
+          "..",
+          "..",
+          "react-apps",
+          "{{sourceDirectory}}"
         ),
         templateFiles: path.join(
           __dirname,
-          '..',
-          '..',
-          'react-apps',
-          '{{sourceDirectory}}/**/*'
+          "..",
+          "..",
+          "react-apps",
+          "{{sourceDirectory}}/**/*"
         ),
       },
     ],
