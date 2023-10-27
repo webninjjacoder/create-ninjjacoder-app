@@ -13,7 +13,7 @@ const path = require("path");
 const cp = require("child_process");
 
 const readline = require("readline");
-// const inquirer = require("inquirer");
+const inquirer = require("inquirer");
 
 const rl = readline.createInterface({
   input: process.stdin,
