@@ -9,7 +9,7 @@
     "create-ninjjacoder-app": "node tasks/cra.js"
   },
   "bin": {
-    "create-ninjjacoder-app": "tasks/cra.js"
+    "create-ninjjacoder-app": "tasks/turbo.js"
   },
   "dependencies": {
     "inquirer-search-list": "^1.2.6",
