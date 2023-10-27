@@ -1,6 +1,6 @@
 {
   "name": "create-ninjjacoder-app",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Create starter apps for ninjjacoder",
   "scripts": {
     "gen:new": "turbo gen run",
@@ -9,7 +9,7 @@
     "create-ninjjacoder-app": "node tasks/cra.js"
   },
   "bin": {
-    "create-ninjjacoder-app": "turbo gen run"
+    "create-ninjjacoder-app": "tasks/cra.js"
   },
   "dependencies": {
     "inquirer-search-list": "^1.2.6",

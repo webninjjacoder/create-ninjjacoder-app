@@ -79,34 +79,16 @@ const createApp = async () => {
   let templateName = packages.includes(paramsTemplate) ? paramsTemplate : "";
 
   if (templateName == "") {
-    const res = await prompts({
-      onState: onPromptState,
-      type: "text",
-      name: "path",
-      message: "What is your project named?",
-      initial: "my-app",
-      validate: (name) => {
-        const validation = validateNpmName(path.basename(path.resolve(name)));
-        if (validation.valid) {
-          return true;
-        }
-        return "Invalid project name: " + validation.problems[0];
+    const selectedTemplate = await inquirer.prompt([
+      {
+        type: "list",
+        name: "template",
+        message: "Which template should we use (e.g. react-cra)?",
+        choices: packages,
       },
-    });
+    ]);
 
-    if (typeof res.path === "string") {
-      projectPath = res.path.trim();
-    }
-    // const selectedTemplate = await inquirer.prompt([
-    //   {
-    //     type: "list",
-    //     name: "template",
-    //     message: "Which template should we use (e.g. react-cra)?",
-    //     choices: packages,
-    //   },
-    // ]);
-
-    templateName = "react-cra";
+    templateName = selectedTemplate.template;
   }
 
   const templatePath = path.join(__dirname, "..", "react-apps", templateName);
