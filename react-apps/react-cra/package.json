@@ -1,0 +1,45 @@
+{
+  "name": "msk-starter-react-cra",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "dev": "react-scripts start",
+    "eject": "react-scripts eject",
+    "test": "react-scripts test"
+  },
+  "dependencies": {
+    "@mskcc/carbon-react": "^2.1.0",
+    "@mskcc/components": "^2.1.0",
+    "@mskcc/fundamentals": "^2.1.0",
+    "@mskcc/icons": "^2.1.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "sass": "^1.68.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  }
+}

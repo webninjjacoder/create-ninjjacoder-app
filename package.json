@@ -1,0 +1,35 @@
+{
+  "name": "create-ninjjacoder-app",
+  "version": "1.0.0",
+  "description": "<img src=\"https://cdn.jsdelivr.net/npm/@mskcc/dsm-assets@latest/src/design-system-logo.svg\" />",
+  "scripts": {
+    "gen:new": "turbo gen run",
+    "sync": "syncpack format && syncpack list-mismatches",
+    "sync:fix": "syncpack fix-mismatches",
+    "create-ninjjacoder-app": "node tasks/cra.js"
+  },
+  "bin": {
+    "create-ninjjacoder-app": "tasks/cra.js"
+  },
+  "devDependencies": {
+    "@types/node": "~18",
+    "inquirer-search-list": "^1.2.6",
+    "syncpack": "^11.2.1",
+    "turbo": "^1.10.14"
+  },
+  "workspaces": [
+    "react-apps",
+    "wip"
+  ],
+  "main": "tasks/cra.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webninjjacoder/create-ninjjacoder-app.git"
+  },
+  "author": "Rizwan Ali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webninjjacoder/create-ninjjacoder-app/issues"
+  },
+  "homepage": "https://github.com/webninjjacoder/create-ninjjacoder-app#readme"
+}

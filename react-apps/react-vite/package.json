@@ -1,0 +1,30 @@
+{
+  "name": "msk-starter-react-vite",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mskcc/carbon-react": "^2.1.0",
+    "@mskcc/components": "^2.1.0",
+    "@mskcc/fundamentals": "^2.1.0",
+    "@mskcc/icons": "^2.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.14.2",
+    "react-router-dom": "^6.14.2",
+    "vite": "^4.4.8"
+  },
+  "devDependencies": {
+    "@types/node": "~18",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.4",
+    "sass": "^1.68.0",
+    "typescript": "^5.2.2",
+    "vite-plugin-pages": "^0.31.0"
+  }
+}

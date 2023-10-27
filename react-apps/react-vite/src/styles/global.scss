@@ -1,0 +1,9 @@
+@use '@mskcc/fundamentals/src/styles-all' with (
+  $msk--font-path: '@mskcc/fundamentals/src/typography/assets/'
+);
+@use '@mskcc/icons';
+@use '@mskcc/components/carbon-11';
+
+.msk-main-page-container {
+  padding-top: 3rem;
+}
