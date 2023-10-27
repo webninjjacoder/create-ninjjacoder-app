@@ -1,7 +1,7 @@
 {
   "name": "create-ninjjacoder-app",
-  "version": "1.0.0",
-  "description": "<img src=\"https://cdn.jsdelivr.net/npm/@mskcc/dsm-assets@latest/src/design-system-logo.svg\" />",
+  "version": "1.0.1",
+  "description": "Create starter apps for ninjjacoder",
   "scripts": {
     "gen:new": "turbo gen run",
     "sync": "syncpack format && syncpack list-mismatches",
