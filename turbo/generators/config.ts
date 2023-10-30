@@ -9,7 +9,7 @@ const currentDirectory = process.cwd();
 export default function generator(plop: PlopTypes.NodePlopAPI): void {
   plop.setPrompt("search-list", searchList);
 
-  plop.setGenerator("generate app", {
+  plop.setGenerator("generate-app", {
     // description: 'Copy a directory to a specified location',
     prompts: [
       {
